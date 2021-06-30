@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"index.js","sourcesContent":["\nmodule.exports = () => {\n\tconst _ = Error.prepareStackTrace;\n\tError.prepareStackTrace = (_, stack) => stack;\n\tconst stack = new Error().stack.slice(1);\n\tError.prepareStackTrace = _;\n\treturn stack;\n};\n"]}

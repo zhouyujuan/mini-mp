@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA","file":"index.js","sourcesContent":["\nconst callerCallsite = require('caller-callsite');\n\nmodule.exports = () => callerCallsite().getFileName();\n"]}

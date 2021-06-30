@@ -1,0 +1,15 @@
+{
+    "name": "dztest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "wxci": "NODE_ENV=dev node ci.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "miniprogram-ci": "^1.2.3"
+    }
+}

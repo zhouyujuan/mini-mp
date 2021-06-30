@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"index.js","sourcesContent":["\nmodule.exports = function (url) {\n\tif (typeof url !== 'string') {\n\t\tthrow new TypeError('Expected a string');\n\t}\n\n\treturn /^[a-z][a-z0-9+.-]*:/.test(url);\n};\n"]}

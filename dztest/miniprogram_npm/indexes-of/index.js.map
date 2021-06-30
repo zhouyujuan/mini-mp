@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"index.js","sourcesContent":["module.exports = function (ary, item) {\n  var i = -1, indexes = []\n  while((i = ary.indexOf(item, i + 1)) !== -1)\n    indexes.push(i)\n  return indexes\n}\n"]}
