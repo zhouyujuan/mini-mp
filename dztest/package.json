@@ -1,13 +1,17 @@
 {
   "name": "dztest",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "wxci": "cross-env node ci.js"
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "inquirer": "^8.1.1",
+    "miniprogram-ci": "^1.1.6"
   },
-  "dependencies": {
-    "cross-env": "^7.0.3",
-    "miniprogram-ci": "^1.2.3"
-  }
+  "scripts": {
+    "wxci:dev": "node ci.local.js",
+    "wxci": "node ci.js"
+  },
+  "author": "",
+  "license": "ISC"
 }

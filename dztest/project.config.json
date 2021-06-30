@@ -1,5 +1,4 @@
 {
-    "minigameRoot": "./",
     "description": "项目配置文件",
     "packOptions": {
         "ignore": []
@@ -36,7 +35,7 @@
         "packNpmRelationList": []
     },
     "compileType": "miniprogram",
-    "libVersion": "2.18.0",
+    "libVersion": "2.14.4",
     "appid": "wx3c13c274592b1af5",
     "projectname": "dztest",
     "debugOptions": {
