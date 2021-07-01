@@ -2,12 +2,11 @@ const ci = require('miniprogram-ci');
 const projectConfig = require('./project.config.json');
 /**
  * 获取环境参数
- * type 操作类型 publish 测试人员需要开通 体验者权限
  * version:版本号 上传操作必填
  * desc:版本描述  上传操作必填
  * buildId: 构建id
  */
-const { type, version = '', desc = '', buildId='' } = getEnvParams(process.argv);
+const {version = '', desc = ''} = getEnvParams(process.argv);
 
 // 微信小程序的私有key文件存储路径
 const privateKeyPath = `./private.${projectConfig.appid}.key`;
@@ -46,18 +45,18 @@ const project = new ci.Project({ ...reqParams });
   console.log(previewResult);
 })();
 
-if (type == 'publish') {
-  (async () => {
-    const uploadResult = await ci.upload({
-      project,
-      version,
-      desc,
-      setting: uploadParams,
-      onProgressUpdate: console.log,
-    });
-    console.log(uploadResult);
-  })();
-}
+
+(async () => {
+  const uploadResult = await ci.upload({
+    project,
+    version,
+    desc,
+    setting: uploadParams,
+    onProgressUpdate: console.log,
+  });
+  console.log(uploadResult);
+})();
+
 
 /**
  * 获取node命令行参数
@@ -66,7 +65,7 @@ if (type == 'publish') {
 function getEnvParams(options) {
   let envParams = {};
   // 从第三个参数开始,是自定义参数
-  for (let i = 2, len = options.length; i < len; i++) {
+  for (let i = 0, len = options.length; i < len; i++) {
     let arg = options[i].split('=');
     envParams[arg[0]] = arg[1];
   }
