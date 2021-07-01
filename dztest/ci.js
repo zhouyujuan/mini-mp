@@ -1,28 +1,20 @@
 const ci = require('miniprogram-ci');
-
+const projectConfig = require('./project.config.json');
 /**
  * 获取环境参数
- * type 操作类型 preview | publish
+ * type 操作类型 publish 测试人员需要开通 体验者权限
  * version:版本号 上传操作必填
  * desc:版本描述  上传操作必填
- * appid:应用id,测试人员有时需要切换应用Id
  * buildId: 构建id
  */
-const { type, version = '', desc = '', appid = '', buildId='' } = getEnvParams(process.argv);
+const { type, version = '', desc = '', buildId='' } = getEnvParams(process.argv);
 
-console.log('ci.js--process.argv-', process.argv);
-
-if(!appid){
-  console.error('appid不能为空!!!');
-  process.exit(1);
-} 
-// 微信小程序的私有key文件存储路径,每次新增appid时,需要找运维加私有key
-// const privateKeyPath = `/var/lib/jenkins/cert/private.${appid}.key`;
-const privateKeyPath = `./private.${appid}.key`;
+// 微信小程序的私有key文件存储路径
+const privateKeyPath = `./private.${projectConfig.appid}.key`;
 
 // 请求参数
 const reqParams = {
-  appid,
+  appid: projectConfig.appid,
   type: 'miniProgram',
   projectPath: './',
   privateKeyPath,
